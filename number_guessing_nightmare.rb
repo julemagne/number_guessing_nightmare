@@ -1,28 +1,34 @@
 # I got this
 
-def isitnumber(input)
-  Float(input) rescue false
+h = [1..100]
+n = [33, 66].shuffle.sample
+5.times do
+  puts "Is your number #{n}?"
+
+  if gets.chomp.upcase == 'YES'
+    puts 'Computer wins'
+    break
+  else gets.chomp.upcase == 'NO'
+       puts 'Is your number higher or lower?'
+       if gets.chomp.upcase == 'HIGHER'
+         h = h.each do|x|
+           x.delete if x < n || x = n
+           #all numbers less than or equal to n are deleted from h
+         end
+       elsif gets.chomp.upcase == 'LOWER'
+         h = h.each do|x|
+           x.delete if x > n || x = n
+           #all numbers greater than or equal to n are deleted from h
+         end
+       else
+         'User, please enter higher or lower.'
+       end
+    end
+      #"User put the correct input pls"
+       puts "#{h}"
+  
+  n = h[((h.count) / 3)]
+  #n should be the index of h at the length of h divided by 3
 end
 
-puts "User, enter a number between 1 and 100.
-The computer gets five tries to guess your number. "
-humnum = gets.chomp
-if !isitnumber(humnum)
-  puts 'User, that is not a number. Enter a number!'
-else
-  humnum = humnum.to_i
-  puts "66"
-  puts "Is the number:
-  1. Too high?
-  2. Too low?
-  3. The number you chose?
-  Type 1, 2, or 3. "
-  if gets.chomp.to_i = 1
-    puts "22"
-  elsif gets.chomp.to_i = 2
-    puts "77"
-  elsif gets.chomp.to_i = 3
-    puts "The computer has guessed your number!"
-  else
-    puts "User, enter 1, 2, or 3."
-end
+# Atom plea
