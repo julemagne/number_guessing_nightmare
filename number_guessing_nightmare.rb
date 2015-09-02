@@ -1,7 +1,8 @@
 # I got this
 
-h = [1..100]
+h = (1..100).to_a
 n = [33, 66].shuffle.sample
+puts "#{h}"
 5.times do
   puts "Is your number #{n}?"
 
@@ -12,12 +13,12 @@ n = [33, 66].shuffle.sample
        puts 'Is your number higher or lower?'
        if gets.chomp.upcase == 'HIGHER'
          h = h.each do |x|
-           x.delete if x < n || x == n
+           delete_if x <= n
            #all numbers less than or equal to n are deleted from h
          end
        elsif gets.chomp.upcase == 'LOWER'
          h = h.each do |x|
-           x.delete if x > n || x == n
+           delete_if x >= n
            #all numbers greater than or equal to n are deleted from h
          end
        else
