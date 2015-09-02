@@ -2,7 +2,7 @@
 
 h = (1..100).to_a
 n = [33, 66].shuffle.sample
-puts "#{h}"
+#puts "#{h}"
 
 def ask(question)
   puts question
@@ -36,7 +36,7 @@ end
       end
     end
 
-    puts "#{h}"
+    #puts "#{h}"
 
     n = h[((h.count) / 3)]
     # n should be the index of h at the length of h divided by 3
